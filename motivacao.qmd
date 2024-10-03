@@ -24,3 +24,13 @@ Então dizemos que $\hat{\theta}$ é uma estimativa de máxima verossimilhança 
 A interpretação no caso discreto: é mais provável que $\hat{\theta}$ tenha gerado os dados $x_1, \  \dots, \ x_n$
 
 Como $\hat{\theta}$ depende da amostra, escrevemos $\hat{\theta}(x_1, \ \dots, x_n)$. Neste caso, $\hat{\theta}(X_1, \ \dots, \ X_n)$ é o estimador de máxima verossimilhança (EMV).
+
+:::{.callout-note}
+ Para cada amostra observada $\textbf{x} = \ (x_1, \ \dots, x_n)$ 
+
+ A definição nos diz que $\hat{\theta}(\textbf{x})$ é um ponto de máximo global. Podemos ter nenhum ou mais de um máximo global
+
+ Suponha que $\Theta$ é um intervalo e que o ponto $\hat{\theta}$ é um ponto interior de $\Theta$ que é ponto de máximo de L, podendo ser um máximo local. Se L tem derivada em $\hat{\theta}$, então $L'( \hat{\theta}) = 0$. Ou seja, $\hat{\theta}$ é um ponto estacionário de L (também dizemos $\hat{\theta}$ é um zero da função L'). Este resultado é conhecido no Cálculo como Teorema de Fermat para Pontos Estacionários.
+
+ Ou seja, sob as condições acima, se $\hat{\theta}$ for EMV, então a derivada de L se anula neste ponto. A recíproca pode não ser verdadeira.
+:::
