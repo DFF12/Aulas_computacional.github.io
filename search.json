@@ -30,6 +30,16 @@
     ]
   },
   {
+    "objectID": "motivacao.html#motivação---o-estimador-de-máxima-verossimilhança",
+    "href": "motivacao.html#motivação---o-estimador-de-máxima-verossimilhança",
+    "title": "Solução Numérica de Equações",
+    "section": "",
+    "text": "Nota\n\n\n\nPara cada amostra observada \\(\\textbf{x} = \\ (x_1, \\ \\dots, x_n)\\)\nA definição nos diz que \\(\\hat{\\theta}(\\textbf{x})\\) é um ponto de máximo global. Podemos ter nenhum ou mais de um máximo global\nSuponha que \\(\\Theta\\) é um intervalo e que o ponto \\(\\hat{\\theta}\\) é um ponto interior de \\(\\Theta\\) que é ponto de máximo de L, podendo ser um máximo local. Se L tem derivada em \\(\\hat{\\theta}\\), então \\(L'( \\hat{\\theta}) = 0\\). Ou seja, \\(\\hat{\\theta}\\) é um ponto estacionário de L (também dizemos \\(\\hat{\\theta}\\) é um zero da função L’). Este resultado é conhecido no Cálculo como Teorema de Fermat para Pontos Estacionários.\nOu seja, sob as condições acima, se \\(\\hat{\\theta}\\) for EMV, então a derivada de L se anula neste ponto. A recíproca pode não ser verdadeira.",
+    "crumbs": [
+      "Solução Numérica de Equações"
+    ]
+  },
+  {
     "objectID": "metodo_bissecao.html",
     "href": "metodo_bissecao.html",
     "title": "3  Método da Bisseção",

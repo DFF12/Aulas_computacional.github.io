@@ -225,6 +225,22 @@ window.Quarto = {
 <p>Então dizemos que <span class="math inline">\(\hat{\theta}\)</span> é uma estimativa de máxima verossimilhança de <span class="math inline">\(\theta\)</span>.</p>
 <p>A interpretação no caso discreto: é mais provável que <span class="math inline">\(\hat{\theta}\)</span> tenha gerado os dados <span class="math inline">\(x_1, \  \dots, \ x_n\)</span></p>
 <p>Como <span class="math inline">\(\hat{\theta}\)</span> depende da amostra, escrevemos <span class="math inline">\(\hat{\theta}(x_1, \ \dots, x_n)\)</span>. Neste caso, <span class="math inline">\(\hat{\theta}(X_1, \ \dots, \ X_n)\)</span> é o estimador de máxima verossimilhança (EMV).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para cada amostra observada <span class="math inline">\(\textbf{x} = \ (x_1, \ \dots, x_n)\)</span></p>
+<p>A definição nos diz que <span class="math inline">\(\hat{\theta}(\textbf{x})\)</span> é um ponto de máximo global. Podemos ter nenhum ou mais de um máximo global</p>
+<p>Suponha que <span class="math inline">\(\Theta\)</span> é um intervalo e que o ponto <span class="math inline">\(\hat{\theta}\)</span> é um ponto interior de <span class="math inline">\(\Theta\)</span> que é ponto de máximo de L, podendo ser um máximo local. Se L tem derivada em <span class="math inline">\(\hat{\theta}\)</span>, então <span class="math inline">\(L'( \hat{\theta}) = 0\)</span>. Ou seja, <span class="math inline">\(\hat{\theta}\)</span> é um ponto estacionário de L (também dizemos <span class="math inline">\(\hat{\theta}\)</span> é um zero da função L’). Este resultado é conhecido no Cálculo como Teorema de Fermat para Pontos Estacionários.</p>
+<p>Ou seja, sob as condições acima, se <span class="math inline">\(\hat{\theta}\)</span> for EMV, então a derivada de L se anula neste ponto. A recíproca pode não ser verdadeira.</p>
+</div>
+</div>
 
 
 </section>
