@@ -44,7 +44,7 @@
     "href": "metodo_bissecao.html",
     "title": "3  Método da Bisseção",
     "section": "",
-    "text": "Vamos expor a seguir métodos numéricos para encontrarmos pontos estacionários de uma função \\(g\\), ou seja, pontos \\(x \\in \\mathbb{R}\\) tais que \\(g'(x)=0\\). Primeiramente vamos considerar um exemplo simples (Givens & Hoeting, 2013). Seja\n\\[\ng(x)= \\frac{\\log x}{1+x}, \\quad x&gt;0.\n\\tag{3.1}\\]",
+    "text": "3.1 Métodos Iterativos\nEste tipo de problema pode ser resolvido usando o que chamamos de Método iterativo. Observemos o gráfico da função \\(g\\):\nlibrary(ggplot2)\nfuncao_g &lt;- function(x) {\n    return(log(x)/(1+x))\n}\n\n\nx &lt;- seq(0.01, 6, 0.01)\ny &lt;- funcao_g(x)\n\nresultados &lt;- data.frame(x = x, imagem = y);\n\nggplot(data = resultados, aes(x = x, y = imagem)) +\ngeom_line()\n\n\n\n\n\n\n\nFigura 3.1: Gráfico da função g(x)",
     "crumbs": [
       "Solução Numérica de Equações",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Método da Bisseção</span>"
