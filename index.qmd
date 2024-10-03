@@ -1,5 +1,9 @@
-# Preface {.unnumbered}
+# Introdução: Problemas de interesse
 
-This is a Quarto book.
+Encontrar soluções de equações não lineares onde não é possível obter uma solução analítica;
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Obter integrais que apresentam uma forma complicada que inviabiliza encontrar uma solução analítica;
+
+Gerar artificialmente amostras a partir de modelos estatísticos;
+
+Aplicar a metodologia estudada na resolução de problemas de inferência.
