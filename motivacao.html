@@ -262,6 +262,18 @@ Nota
 <p>A função <span class="math inline">\(S(\theta)=\ell'(\theta)\)</span>, <span class="math inline">\(\theta \in \Theta\)</span>, é denominada função escore. Assim, em geral, encontrar o EMV é equivalente a resolver em <span class="math inline">\(\theta\)</span> a equação <span class="math inline">\(S(\theta)=0\)</span>.</p>
 <p>No exemplo acima obtivemos uma solução analítica para esta equação. Mas em algumas situações isto não é possível.</p>
 <p>Considere o seguinte exemplo (Bolfarine e Sandoval, 2010): sejam <span class="math inline">\(X_1, \ldots,X_n \overset{iid}{\sim} f(.|\theta)\)</span>, onde</p>
+<p><span class="math display">\[
+    f(x|\theta) = \left\{
+    \begin{matrix}
+        \frac{1}{2}(1+\theta x), &amp;  \mbox{se} &amp; x&gt;0\\
+          0, &amp;  \mbox{se} &amp; x\leq 0.
+    \end{matrix}
+         \right.
+\]</span></p>
+<p>Onde <span class="math inline">\(-1 &lt; \theta &lt;1\)</span> verifique que <span class="math inline">\(f(\cdot|\theta)\)</span> é uma densidade.</p>
+<p>Então é possível mostrar que <span class="math display">\[
+S(\theta)= \sum_{i=1}^n \frac{x_i}{1+\theta x_i}.
+\]</span></p>
 
 
 </section>
