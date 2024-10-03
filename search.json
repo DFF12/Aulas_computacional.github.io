@@ -14,19 +14,40 @@
     "href": "intro.html",
     "title": "2  Introduction",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. «Literate Programming». Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
     ]
   },
   {
+    "objectID": "motivacao.html",
+    "href": "motivacao.html",
+    "title": "Motivação: Método da Máxima Verossimilhança",
+    "section": "",
+    "text": "asdadd",
+    "crumbs": [
+      "Motivação: Método da Máxima Verossimilhança"
+    ]
+  },
+  {
+    "objectID": "metodo_bissecao.html",
+    "href": "metodo_bissecao.html",
+    "title": "3  Método da Bisseção",
+    "section": "",
+    "text": "asdajhduahd",
+    "crumbs": [
+      "Motivação: Método da Máxima Verossimilhança",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Método da Bisseção</span>"
+    ]
+  },
+  {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "3  Summary",
+    "title": "4  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary</span>"
     ]
   },
   {
