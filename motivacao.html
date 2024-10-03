@@ -295,73 +295,39 @@ Nota
 <p>A solução da equação <span class="math inline">\(\ell'(\theta)=0\)</span> é dada por <span class="math inline">\(\widehat{\theta}= n/\sum_{i=1}^n x_i\)</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">=</span> <span class="dv">5</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>amostra <span class="ot">=</span> <span class="fu">rexp</span>(<span class="dv">100</span>, <span class="at">rate =</span> theta); amostra</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  [1] 0.528411980 0.324714451 0.070575425 0.231873705 0.432811559 0.361305661
-  [7] 0.255296433 0.773969017 0.002596110 0.098746255 0.237363875 0.011054050
- [13] 0.032642319 0.124384233 0.260877223 0.119289736 0.111989385 0.044516365
- [19] 0.108541056 0.036324517 0.012416958 0.116719973 0.337881139 0.402267048
- [25] 0.125210265 0.024548061 0.221162772 0.058934654 0.115305217 0.130162705
- [31] 0.023849731 0.081540297 0.159643850 0.238135482 0.035392510 0.071502209
- [37] 0.089673397 0.014887317 0.099085513 0.076469567 0.018754744 0.214042675
- [43] 0.542940776 0.028780798 0.411526393 0.480205579 0.367570150 0.464433631
- [49] 0.413044420 0.116656352 0.291190087 0.263082761 0.283071874 0.055516604
- [55] 0.452802746 0.043800489 0.291225165 0.205043856 0.073415800 0.216899549
- [61] 0.137659974 0.142686544 0.562723444 0.326652586 0.571939178 0.186112697
- [67] 0.405928989 0.779997389 0.049889519 0.043859450 0.351478428 0.369499550
- [73] 0.105570475 0.260275520 0.123222827 0.165817353 0.939212636 0.071182862
- [79] 0.217824237 0.002852752 0.262478603 0.087498881 0.098113328 0.041044228
- [85] 0.564448571 0.203575277 0.179250961 0.120348928 0.305080247 0.053266382
- [91] 0.477505140 0.141673979 0.285881407 0.146047013 0.080755633 0.114764875
- [97] 0.067367335 0.178268025 0.036796398 0.073228765</code></pre>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>amostra <span class="ot">=</span> <span class="fu">rexp</span>(<span class="dv">100</span>, <span class="at">rate =</span> theta); </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>loglik <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">theta =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">length</span>(amostra)<span class="sc">*</span><span class="fu">log</span>(theta) <span class="sc">-</span> theta<span class="sc">*</span><span class="fu">sum</span>(amostra))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>score_exp <span class="ot">=</span> <span class="cf">function</span>(<span class="at">theta =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">=</span> <span class="fu">length</span>(amostra)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(n<span class="sc">/</span>theta <span class="sc">-</span> <span class="fu">sum</span>(amostra))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>} </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>theta_x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">10</span>, <span class="at">by =</span> <span class="fl">0.1</span>)  <span class="co"># Sequência de valores de -10 a 10 com incremento de 0.1</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">loglik</span>(<span class="at">theta =</span> theta_x);</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>maximo_estimado <span class="ot">=</span> <span class="fu">optimise</span>(loglik, <span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">10</span>), <span class="at">maximum =</span> T)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>y_score <span class="ot">=</span> <span class="fu">score_exp</span>(<span class="at">theta =</span> theta_x)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>loglik <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">theta =</span> <span class="cn">NULL</span>) {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">length</span>(amostra)<span class="sc">*</span><span class="fu">log</span>(theta) <span class="sc">-</span> theta<span class="sc">*</span><span class="fu">sum</span>(amostra))</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>score_exp <span class="ot">=</span> <span class="cf">function</span>(<span class="at">theta =</span> <span class="cn">NULL</span>) {</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">=</span> <span class="fu">length</span>(amostra)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(n<span class="sc">/</span>theta <span class="sc">-</span> <span class="fu">sum</span>(amostra))</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>} </span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>theta_x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">10</span>, <span class="at">by =</span> <span class="fl">0.1</span>)  <span class="co"># Sequência de valores de -10 a 10 com incremento de 0.1</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">loglik</span>(<span class="at">theta =</span> theta_x); y</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] -21.167857 -13.753625  -7.169273  -1.281787   4.012224   8.794726
- [7]  13.131792  17.077468  20.676524  23.966461  26.979004  29.741235
-[13]  32.276451  34.604842  36.744017  38.709431  40.514717  42.171964
-[19]  43.691943  45.084289  46.357658  47.519855  48.577939  49.538319
-[25]  50.406830  51.188798  51.889100  52.512212  53.062251  53.543014
-[31]  53.958009  54.310484  54.603454  54.839718  55.021884  55.152384
-[37]  55.233489  55.267324  55.255879  55.201022  55.104507  54.967984
-[43]  54.793007  54.581041  54.333468  54.051597  53.736661  53.389833
-[49]  53.012222  52.604880  52.168806  51.704950  51.214217  50.697465
-[55]  50.155515  49.589148  48.999110  48.386112  47.750835  47.093929
-[61]  46.416017  45.717695  44.999533  44.262080  43.505859  42.731376
-[67]  41.939113  41.129535  40.303090  39.460207  38.601299  37.726766
-[73]  36.836989  35.932340  35.013173  34.079833  33.132651  32.171948
-[79]  31.198032  30.211202  29.211746  28.199944  27.176065  26.140371
-[85]  25.093115  24.034540  22.964884  21.884377  20.793241  19.691693
-[91]  18.579941</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>maximo_estimado <span class="ot">=</span> <span class="fu">optimise</span>(loglik, <span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">10</span>), <span class="at">maximum =</span> T)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y_score <span class="ot">=</span> <span class="fu">score_exp</span>(<span class="at">theta =</span> theta_x)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plotando a log-verossimilhança</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(theta_x, y, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">"Gráfico da log-verossimilhança de: f(x) ="</span>, theta, <span class="st">"exp(-"</span>, theta, <span class="st">"x)"</span>),</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"x"</span>, <span class="at">ylab =</span> <span class="st">"f(x)"</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>theta, <span class="at">col=</span><span class="st">"blue"</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>maximo_estimado, <span class="at">col=</span><span class="st">"red"</span>)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Plotando a função score</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(theta_x, y_score, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">"Gráfico da funcao score de: f(x) ="</span>, theta, <span class="st">"exp(-"</span>, theta, <span class="st">"x)"</span>),</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"x"</span>, <span class="at">ylab =</span> <span class="st">"f(x)"</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>, <span class="at">col=</span><span class="st">"red"</span>)</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>maximo_estimado, <span class="at">col=</span><span class="st">"red"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plotando a log-verossimilhança</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(theta_x, y, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">"Gráfico da log-verossimilhança de: f(x) ="</span>, theta, <span class="st">"exp(-"</span>, theta, <span class="st">"x)"</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"x"</span>, <span class="at">ylab =</span> <span class="st">"f(x)"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>theta, <span class="at">col=</span><span class="st">"blue"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>maximo_estimado, <span class="at">col=</span><span class="st">"red"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Plotando a função score</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(theta_x, y_score, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">"Gráfico da funcao score de: f(x) ="</span>, theta, <span class="st">"exp(-"</span>, theta, <span class="st">"x)"</span>),</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"x"</span>, <span class="at">ylab =</span> <span class="st">"f(x)"</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>, <span class="at">col=</span><span class="st">"red"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>maximo_estimado, <span class="at">col=</span><span class="st">"red"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
