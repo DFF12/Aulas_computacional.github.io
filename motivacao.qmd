@@ -67,3 +67,19 @@ A função  $S(\theta)=\ell'(\theta)$, $\theta \in \Theta$,  é denominada funç
 No exemplo acima obtivemos uma solução analítica para esta equação. Mas em  algumas situações isto não é possível.
 
 Considere o seguinte exemplo (Bolfarine e Sandoval, 2010): sejam $X_1, \ldots,X_n \overset{iid}{\sim} f(.|\theta)$, onde 
+
+$$
+    f(x|\theta) = \left\{
+	\begin{matrix}
+	    \frac{1}{2}(1+\theta x), &  \mbox{se} & x>0\\
+		  0, &  \mbox{se} & x\leq 0. 
+	\end{matrix}
+		 \right.
+$$
+
+Onde $-1 < \theta <1$ verifique que $f(\cdot|\theta)$ é uma densidade.
+
+Então é possível mostrar que
+$$
+S(\theta)= \sum_{i=1}^n \frac{x_i}{1+\theta x_i}. 
+$$
