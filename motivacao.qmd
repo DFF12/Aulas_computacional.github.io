@@ -59,3 +59,11 @@ implicando em
 $$
 \ell'(\theta)= n/\theta - \sum_{i=1}^n x_i, \,\,\, \theta > 0. 
 $$
+
+A solução da equação $\ell'(\theta)=0$ é dada por $\widehat{\theta}= n/\sum_{i=1}^n x_i$ 
+
+A função  $S(\theta)=\ell'(\theta)$, $\theta \in \Theta$,  é denominada função escore.  Assim, em geral, encontrar o EMV é equivalente a resolver em $\theta$ a equação $S(\theta)=0$.  
+
+No exemplo acima obtivemos uma solução analítica para esta equação. Mas em  algumas situações isto não é possível.
+
+Considere o seguinte exemplo (Bolfarine e Sandoval, 2010): sejam $X_1, \ldots,X_n \overset{iid}{\sim} f(.|\theta)$, onde 
