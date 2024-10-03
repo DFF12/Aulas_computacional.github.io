@@ -75,7 +75,7 @@ $$
 		  0, &  \mbox{se} & x\leq 0. 
 	\end{matrix}
 		 \right.
-$$
+$$ {#eq-monica-score}
 
 Onde $-1 < \theta <1$ verifique que $f(\cdot|\theta)$ é uma densidade.
 
@@ -85,4 +85,4 @@ S(\theta)= \sum_{i=1}^n \frac{x_i}{1+\theta x_i}.
 $$
 
 No entanto, não há solução analítica para $S(\theta)=0$. 
-Os gráficos a seguir mostram o comportamento das funções de log-verossimilhança (à esquerda) e escore (à direita). A amostra utilizada foi gerada artificialmente a partir do modelo , com $n=40$ e $\theta=-0,35$ (como gerar esta amostra? voltaremos em breve a este assunto). 
+Os gráficos a seguir mostram o comportamento das funções de log-verossimilhança (à esquerda) e escore (à direita). A amostra utilizada foi gerada artificialmente a partir do modelo  (@eq-monica-score), com $n=40$ e $\theta=-0,35$ (como gerar esta amostra? voltaremos em breve a este assunto). 
