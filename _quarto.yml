@@ -1,5 +1,6 @@
 project:
   type: book
+lang: pt
 
 book:
   title: "Aulas_teste.github.io"
@@ -8,6 +9,9 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - part: motivacao.qmd
+      chapters: 
+        - metodo_bissecao.qmd
     - summary.qmd
     - references.qmd
 
