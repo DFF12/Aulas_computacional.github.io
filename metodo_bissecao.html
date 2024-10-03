@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -177,7 +206,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>asdajhduahd</p>
+<p>Vamos expor a seguir métodos numéricos para encontrarmos pontos estacionários de uma função <span class="math inline">\(g\)</span>, ou seja, pontos <span class="math inline">\(x \in \mathbb{R}\)</span> tais que <span class="math inline">\(g'(x)=0\)</span>. Primeiramente vamos considerar um exemplo simples (Givens &amp; Hoeting, 2013). Seja</p>
+<p><span class="math display">\[
+g(x)= \frac{\log x}{1+x}, \quad x&gt;0.
+\]</span></p>
 
 
 

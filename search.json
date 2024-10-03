@@ -44,7 +44,7 @@
     "href": "metodo_bissecao.html",
     "title": "3  Método da Bisseção",
     "section": "",
-    "text": "asdajhduahd",
+    "text": "Vamos expor a seguir métodos numéricos para encontrarmos pontos estacionários de uma função \\(g\\), ou seja, pontos \\(x \\in \\mathbb{R}\\) tais que \\(g'(x)=0\\). Primeiramente vamos considerar um exemplo simples (Givens & Hoeting, 2013). Seja\n\\[\ng(x)= \\frac{\\log x}{1+x}, \\quad x&gt;0.\n\\]",
     "crumbs": [
       "Solução Numérica de Equações",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Método da Bisseção</span>"
