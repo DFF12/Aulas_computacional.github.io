@@ -34,3 +34,17 @@ Como $\hat{\theta}$ depende da amostra, escrevemos $\hat{\theta}(x_1, \ \dots, x
 
  Ou seja, sob as condições acima, se $\hat{\theta}$ for EMV, então a derivada de L se anula neste ponto. A recíproca pode não ser verdadeira.
 :::
+
+Assim, em muitos casos encontrados na prática, encontrar o EMV é um problema relacionado a encontrar soluções em $\theta$ para a equação $L'(\hat{\theta}) = 0$ ou $l'(\theta) = 0$.
+
+Por exemplo, considere uma amostra aleatória $X_1, \dots, X_n$ proveniente de uma distribuição $exp(\theta)$. Assim, cada $X_i$ tem densidade de probabilidade.
+
+
+$$
+    f(x|\theta) = \left\{
+	\begin{matrix}
+	    \theta \exp(-\theta x), &  \mbox{se} & x>0\\
+		  0, &  \mbox{se} & x\leq 0. 
+	\end{matrix}
+		 \right.
+$$
