@@ -48,3 +48,14 @@ $$
 	\end{matrix}
 		 \right.
 $$
+
+O espaço paramétrico é $\Theta = (0, \infty)$. Temos então a seguinte função de log-verassimilhança:
+$$
+\ell(\theta)= n \log \theta -\theta \sum_{i=1}^n x_i, \,\,\, \theta > 0, 
+$$
+
+implicando em
+
+$$
+\ell'(\theta)= n/\theta - \sum_{i=1}^n x_i, \,\,\, \theta > 0. 
+$$

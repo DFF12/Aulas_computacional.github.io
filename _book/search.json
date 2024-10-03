@@ -1,0 +1,73 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Aulas_teste.github.io",
+    "section": "",
+    "text": "1 Introdução: Problemas de interesse\nEncontrar soluções de equações não lineares onde não é possível obter uma solução analítica;\nObter integrais que apresentam uma forma complicada que inviabiliza encontrar uma solução analítica;\nGerar artificialmente amostras a partir de modelos estatísticos;\nAplicar a metodologia estudada na resolução de problemas de inferência.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução: Problemas de interesse</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "2  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. «Literate Programming». Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "motivacao.html",
+    "href": "motivacao.html",
+    "title": "Solução Numérica de Equações",
+    "section": "",
+    "text": "Motivação - O Estimador de Máxima Verossimilhança\nNo que segue o termo densidade, significa ou uma densidade de probabilidade (caso absolutamente contínuo) ou uma função de probabilidade (caso discreto).\nSejam \\(X_1, \\  \\dots, \\ X_n \\overset{iid}{\\sim} f(.|\\theta), \\ \\theta \\in \\ \\Theta\\), onde \\(f(.|\\theta)\\) é uma densidade, \\(\\theta\\) é um parâmetro que desejamos estimar e \\(\\Theta\\) é o espaço paramétrico;\nSuponha que observamos os valores \\(x_1, \\ \\dots, \\ x_n\\). A função de verossimilhança é definida por:\n\\[ L(\\theta) = \\prod_{i=1}^{n} f(x_i|\\theta), \\ \\theta \\in \\Theta \\]\nA função de log-verossimilhança é dada por:\n\\[ l(\\theta) = logL(\\theta) = \\sum_{i=1}^{n} log f(x_i|\\theta), \\ \\theta \\ \\in \\Theta\\]\nSeja \\(\\hat{\\theta} \\ \\in \\Theta\\) um valor do parâmetro que maximiza a função de verossimilhança, ou seja, tal que\n\\[L(\\hat{\\theta}) \\ \\geq L(\\hat{\\theta}), \\ \\text{para todo} \\ \\theta \\ \\in \\ \\Theta\\]\nEntão dizemos que \\(\\hat{\\theta}\\) é uma estimativa de máxima verossimilhança de \\(\\theta\\).\nA interpretação no caso discreto: é mais provável que \\(\\hat{\\theta}\\) tenha gerado os dados \\(x_1, \\  \\dots, \\ x_n\\)\nComo \\(\\hat{\\theta}\\) depende da amostra, escrevemos \\(\\hat{\\theta}(x_1, \\ \\dots, x_n)\\). Neste caso, \\(\\hat{\\theta}(X_1, \\ \\dots, \\ X_n)\\) é o estimador de máxima verossimilhança (EMV).\nAssim, em muitos casos encontrados na prática, encontrar o EMV é um problema relacionado a encontrar soluções em \\(\\theta\\) para a equação \\(L'(\\hat{\\theta}) = 0\\) ou \\(l'(\\theta) = 0\\).\nPor exemplo, considere uma amostra aleatória \\(X_1, \\dots, X_n\\) proveniente de uma distribuição \\(exp(\\theta)\\). Assim, cada \\(X_i\\) tem densidade de probabilidade.\n\\[\n    f(x|\\theta) = \\left\\{\n    \\begin{matrix}\n        \\theta \\exp(-\\theta x), &  \\mbox{se} & x&gt;0\\\\\n          0, &  \\mbox{se} & x\\leq 0.\n    \\end{matrix}\n         \\right.\n\\]",
+    "crumbs": [
+      "Solução Numérica de Equações"
+    ]
+  },
+  {
+    "objectID": "motivacao.html#motivação---o-estimador-de-máxima-verossimilhança",
+    "href": "motivacao.html#motivação---o-estimador-de-máxima-verossimilhança",
+    "title": "Solução Numérica de Equações",
+    "section": "",
+    "text": "Nota\n\n\n\nPara cada amostra observada \\(\\textbf{x} = \\ (x_1, \\ \\dots, x_n)\\)\nA definição nos diz que \\(\\hat{\\theta}(\\textbf{x})\\) é um ponto de máximo global. Podemos ter nenhum ou mais de um máximo global\nSuponha que \\(\\Theta\\) é um intervalo e que o ponto \\(\\hat{\\theta}\\) é um ponto interior de \\(\\Theta\\) que é ponto de máximo de L, podendo ser um máximo local. Se L tem derivada em \\(\\hat{\\theta}\\), então \\(L'( \\hat{\\theta}) = 0\\). Ou seja, \\(\\hat{\\theta}\\) é um ponto estacionário de L (também dizemos \\(\\hat{\\theta}\\) é um zero da função L’). Este resultado é conhecido no Cálculo como Teorema de Fermat para Pontos Estacionários.\nOu seja, sob as condições acima, se \\(\\hat{\\theta}\\) for EMV, então a derivada de L se anula neste ponto. A recíproca pode não ser verdadeira.",
+    "crumbs": [
+      "Solução Numérica de Equações"
+    ]
+  },
+  {
+    "objectID": "metodo_bissecao.html",
+    "href": "metodo_bissecao.html",
+    "title": "3  Método da Bisseção",
+    "section": "",
+    "text": "asdajhduahd",
+    "crumbs": [
+      "Solução Numérica de Equações",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Método da Bisseção</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "4  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "References"
+    ]
+  }
+]
