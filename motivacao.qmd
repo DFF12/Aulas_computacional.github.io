@@ -1,3 +1,26 @@
-# Motivação: Método da Máxima Verossimilhança
+# Solução Numérica de Equações
 
-asdadd
+## Motivação - O Estimador de Máxima Verossimilhança
+
+No que segue o termo densidade, significa ou uma densidade de probabilidade (caso absolutamente contínuo) ou uma função de probabilidade (caso discreto).
+
+Sejam $X_1, \  \dots, \ X_n \overset{iid}{\sim} f(.|\theta), \ \theta \in \ \Theta$, onde $f(.|\theta)$ é uma densidade, $\theta$ é um parâmetro que desejamos estimar e $\Theta$ é o espaço paramétrico;
+
+Suponha que observamos os valores $x_1, \ \dots, \ x_n$. A função de verossimilhança é definida por:
+
+$$ L(\theta) = \prod_{i=1}^{n} f(x_i|\theta), \ \theta \in \Theta $$
+
+A função de log-verossimilhança é dada por:
+
+$$ l(\theta) = logL(\theta) = \sum_{i=1}^{n} log f(x_i|\theta), \ \theta \ \in \Theta$$
+
+
+Seja $\hat{\theta} \ \in \Theta$ um valor do parâmetro que maximiza a função de verossimilhança, ou seja, tal que
+
+$$L(\hat{\theta}) \ \geq L(\hat{\theta}), \ \text{para todo} \ \theta \ \in \ \Theta$$
+
+Então dizemos que $\hat{\theta}$ é uma estimativa de máxima verossimilhança de $\theta$.
+
+A interpretação no caso discreto: é mais provável que $\hat{\theta}$ tenha gerado os dados $x_1, \  \dots, \ x_n$
+
+Como $\hat{\theta}$ depende da amostra, escrevemos $\hat{\theta}(x_1, \ \dots, x_n)$. Neste caso, $\hat{\theta}(X_1, \ \dots, \ X_n)$ é o estimador de máxima verossimilhança (EMV).
